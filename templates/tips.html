@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tips</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='static/assets/css/style.css'>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+	</style>
+	<style type="text/css">
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		#sejajar {
+			display: inline-block;
+			margin-left: 50px;
+		}
+
+		.tc-content {
+			margin: 0 auto;
+			padding-bottom: 45px;
+		}
+
+		.tc-isi {
+			padding: 20px 0;
+			border-bottom: 1px dotted #ccc;
+		}
+
+		.panel-title {
+
+			width: 100%;
+			position: relative;
+			margin: 0;
+			padding: 10px 10px 0 48px;
+			display: block;
+			cursor: pointer;
+		}
+
+		.panel-content {
+
+			height: 0;
+			overflow: hidden;
+			z-index: -1;
+			position: relative;
+			opacity: 0;
+			-webkit-transition: .4s ease;
+			-moz-transition: .4s ease;
+			-o-transition: .4s ease;
+			transition: .4s ease;
+		}
+
+		.panel:checked~.panel-content {
+			height: auto;
+			opacity: 1;
+			padding: 14px;
+		}
+
+		.plus {
+			position: absolute;
+			margin-left: 20px;
+			margin-top: 4px;
+			z-index: 5;
+			font-size: 30px;
+			line-height: 100%;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+			-webkit-transition: .2s ease;
+			-moz-transition: .2s ease;
+			-o-transition: .2s ease;
+			transition: .2s ease;
+		}
+
+		.panel:checked~.plus {
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		.panel {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<ul>
+
+				<li class="webname"><a href="#"><img class="header-logo" src="static/assets/img/logo.svg"
+							alt=""></a>Scanox
+				</li>
+				<li class="nav-right"><a href="{{url_for('index')}}">Scan</a></li>
+				<li class="nav-right"><a href="{{url_for('tips')}}">Tips</a></li>
+				<li class="nav-right"><a href="{{url_for('informasi')}}">Informasi</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id=" sejajar" style="margin-right: 30px; max-width: 35%;">
+		<img src="static/assets/img/bro.png" style="width: 100%;">
+	</div>
+
+	<div class="tc-content" id="sejajar" style="width: 50%;">
+		<h2>Tips Cegah Hoax</h2>
+		<p>Seperti yang terlampir pada halaman kominfo.go.id, berikut tips pencegahan terhadap
+			berita hoax :</p>
+		<div class="tc-isi">
+			<input id="q1" type="checkbox" class="panel">
+			<div class="plus">></div>
+			<label for="q1" class="panel-title">Hati-hati dengan judul provokatif</label>
+			<div class="panel-content">Berita hoax seringkali menggunakan judul sensasional yang
+				provokatif, misalnya
+				dengan langsung menudingkan jari ke pihak tertentu. Isinya pun bisa diambil dari
+				berita media resmi,
+				hanya saja diubah-ubah agar menimbulkan persepsi sesuai yang dikehendaki sang
+				pembuat hoax.</div>
+		</div>
+
+		<div class="tc-isi">
+			<input id="q2" type="checkbox" class="panel">
+			<div class="plus">></div>
+			<label for="q2" class="panel-title">Cermati alamat situs</label>
+			<div class="panel-content">Cermatilah alamat URL situs dimaksud. Apabila berasal dari
+				situs yang belum
+				terverifikasi sebagai institusi pers resmi -misalnya menggunakan domain blog, maka
+				informasinya bisa
+				dibilang meragukan.</div>
+		</div>
+
+		<div class="tc-isi">
+			<input id="q3" type="checkbox" class="panel">
+			<div class="plus">></div>
+			<label for="q3" class="panel-title">Periksa fakta</label>
+			<div class="panel-content">Perhatikan dari mana berita berasal dan siapa sumbernya,
+				perhatikan keberimbangan
+				sumber berita. Hal lain yang perlu diamati adalah perbedaan antara berita yang
+				dibuat berdasarkan fakta
+				dan opini.</div>
+		</div>
+
+		<div class="tc-isi">
+			<input id="q4" type="checkbox" class="panel">
+			<div class="plus">></div>
+			<label for="q4" class="panel-title">Cek keaslian foto</label>
+			<div class="panel-content">Cara untuk mengecek keaslian foto bisa dengan memanfaatkan
+				mesin pencari Google,
+				yakni dengan melakukan drag-and-drop ke kolom pencarian Google Images. Hasil
+				pencarian akan menyajikan
+				gambar-gambar serupa yang terdapat di internet sehingga bisa dibandingkan.</div>
+		</div>
+
+		<div class="tc-isi">
+			<input id="q5" type="checkbox" class="panel">
+			<div class="plus">></div>
+			<label for="q5" class="panel-title">Lapor berita atau informasi hoax</label>
+			<div class="panel-content">Anda dapat mengadukan konten negatif ke Kementerian
+				Komunikasi dan Informatika
+				dengan melayangkan e-mail ke alamat aduankonten@mail.kominfo.go.id.</div>
+		</div>
+
+	</div>
+
+	<footer style="bottom: 0px; width: 100%;">
+		<p>&copy; Copyright Scanox 2022</p>
+	</footer>
+
+
+</body>
+
+</html>

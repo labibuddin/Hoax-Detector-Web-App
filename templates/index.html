@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Scanox - Scanner Hoax</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='static/assets/css/style.css'>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+
+                <li class="webname"><a href="#"><img class="header-logo" src="static/assets/img/logo.svg"
+                            alt=""></a>Scanox
+                </li>
+                <li class="nav-right"><a href="{{url_for('index')}}">Scan</a></li>
+                <li class="nav-right"><a href="{{url_for('tips')}}">Tips</a></li>
+                <li class="nav-right"><a href="{{url_for('informasi')}}">Informasi</a></li>
+            </ul>
+        </nav>
+        <div class=" jumbotron">
+            <div class="desc">
+                <h1 class="center-header">Tumpas Tuntas Berita Hoax</h1>
+                <h3 class="center-header">Yuk! Jadi Detektif Berantas Hoax</h3>
+            </div>
+            <div class="img-header">
+                <img id="image-header" src="static/assets/img/img-header.svg">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="main-fitur">
+                <div class="main-guide">
+                    <h2>Cek Hoax di Sini !</h2>
+                </div>
+                <div class="form">
+                    <form method="POST" action="{{url_for('predict')}}">
+                        <div class="desc-guide">
+                            <p>Silahkan masukkan kata kunci di bawah ini</p>
+                        </div>
+                        <div class="content-scan">
+                            <div>
+                                <input name="keyword" class="news-keyword" type="text"
+                                    placeholder="Masukkan keyword berita"><br><br>
+                            </div>
+                            <div class="card-scan">
+                                {% if prediction == 0%}
+                                <h2 style="color:red;">Hoax</h2>
+                                {% elif prediction == 1%}
+                                <h2 style="color:blue;">Valid</h2>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div>
+                            <input class="scan" type="submit" value="Scan">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright Scanox 2022</p>
+    </footer>
+</body>
+
+</html>
